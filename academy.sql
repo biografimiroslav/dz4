@@ -14,7 +14,6 @@ GO
 USE Academy;
 GO
 
--- 1. Таблиця "Групи" (Groups)
 CREATE TABLE Groups (
     Id int IDENTITY(1,1) NOT NULL,
     Name nvarchar(10) NOT NULL,
@@ -29,7 +28,6 @@ CREATE TABLE Groups (
 );
 GO
 
--- 2. Таблиця "Кафедри" (Departments)
 CREATE TABLE Departments (
     Id int IDENTITY(1,1) NOT NULL,
     Financing money NOT NULL CONSTRAINT DF_Departments_Financing DEFAULT 0,
@@ -42,7 +40,6 @@ CREATE TABLE Departments (
 );
 GO
 
--- 3. Таблиця "Факультети" (Faculties)
 CREATE TABLE Faculties (
     Id int IDENTITY(1,1) NOT NULL,
     Name nvarchar(100) NOT NULL,
@@ -53,7 +50,6 @@ CREATE TABLE Faculties (
 );
 GO
 
--- 4. Таблиця "Викладачі" (Teachers)
 CREATE TABLE Teachers (
     Id int IDENTITY(1,1) NOT NULL,
     EmploymentDate date NOT NULL,
@@ -71,7 +67,6 @@ CREATE TABLE Teachers (
 );
 GO
 
--- Тестові дані для перевірки
 INSERT INTO Faculties (Name) VALUES 
 ('Комп''ютерних наук'),
 ('Кібербезпеки та ПЗ'),
@@ -96,7 +91,6 @@ INSERT INTO Teachers (EmploymentDate, Name, Surname, Salary, Premium) VALUES
 ('2020-10-01', 'Ігор', 'Шевченко', 19500.00, 0.00);
 GO
 
--- Перевірка створених таблиць
 SELECT * FROM Faculties;
 SELECT * FROM Departments;
 SELECT * FROM Groups;
